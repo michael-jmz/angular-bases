@@ -1,0 +1,26 @@
+<p>list works!</p>
+<h4>Personajes</h4>
+
+  <ul class="list-group" >
+    <li *ngFor="
+    let item of listCharacter;
+    let i=index;
+    let isFirst= first;
+    let isLast= last"
+    class="list-group-item d-flex justify-content-between aling-items-center"
+    [ngClass]="{'list-group-item-success':isFirst, 'list-group-item-dark':isLast}"><!-- [ngClass] true =Todos los elementos van a tener esa clases | ultimo =isLast -->
+
+    <div>
+      <span class="text-primary">{{i+1}} </span>
+      <span class="text-success">{{item.name}} - </span>
+      <strong>Power: </strong>{{item.power}}
+      <span>Es el primero: {{isFirst}}</span>
+      <!-- <span>Es el ultimo: {{i===listCharacter.length-1}}</span> -->
+      <span>El el ultimo {{isLast}}</span>
+      </div>
+
+      <button (click)="onDeleteCharacterUUID(item.id)" class="btn btn-danger" >x</button>
+
+    </li>
+
+  </ul>

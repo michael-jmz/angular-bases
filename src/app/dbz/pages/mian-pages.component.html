@@ -1,0 +1,15 @@
+<h1>Dragon Ball Z Personajes</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- Creo mi  componetes de lista de DBZ -->
+    <dbz-list [listCharacter]="character"
+    (onDeleteEnviado)="getDeletePersonaje($event)"></dbz-list>
+</div>
+  <div class="col">
+    <!-- recibo desde mi components form el formulario mediante un($event) -->
+    <dbz-add-character  (onNewCharacter)="addPersonaje($event)"></dbz-add-character>
+
+  </div>
+</div>
